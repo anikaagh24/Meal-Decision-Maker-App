@@ -1,18 +1,29 @@
 body{
     background-color: #FFEA99;
-    font-family: Roboto, serif, ;
-    
+    font-family: Roboto, serif;
     margin: 0px;
+    font-style: italic;
    
 }
 h1{
-    color: #000000;
+    color: #FFEA99;
     text-align: center;
 }
+
+.hero-text2{
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: rgb(239, 239, 171);
+}
+
 .hero-image {
-  background-image: url("./media/food.png");
+background-image: url("./media/pasta.jpg");
   background-position: center;
-  background-size: cover;
+  background-size:contain;
   position: relative;
 }
 
@@ -24,7 +35,7 @@ h1{
   transform: translate(-50%, -50%);
   font-size: 50px;
   letter-spacing: 10px;
-  color: white;
+  color: rgb(239, 239, 171);
 }
 
 meal-breakfast{
@@ -63,13 +74,17 @@ p{
 }
 
 .breakfast-button{
-    background-color: #ff4794;
+    background-color: #e33477;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
+    position: absolute;
+    top: 90%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+
 }
 
 .lunch-button{
@@ -79,8 +94,13 @@ p{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }
+
 
 .dinner-button{
     background-color: #d27421;
@@ -89,4 +109,8 @@ p{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    transform: translate(-50%, -50%);
 }
