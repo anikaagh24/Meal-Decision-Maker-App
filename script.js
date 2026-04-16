@@ -1,13 +1,49 @@
-let button = document.querySelector(".breakfast-button")
-let button2 = document.querySelector(".lunch-button")
-let button3 = document.querySelector(".dinner-button")
+let button = document.querySelector("#breakfast-button");
+let button2 = document.querySelector("#lunch-button");
+let button3 = document.querySelector("#dinner-button");
 
-button.addEventListener("click", function() {
+const apiKey = "60500af04e534d729559eb02ffcad121";
+
+document.getElementById("breakfast-button").addEventListener("click", () => {
+  getMeal("breakfast");
 });
 
-button2.addEventListener("click", function() {
+document.getElementById("lunch-button").addEventListener("click", () => {
+  getMeal("lunch");
 });
 
-button3.addEventListener("click", function() {
+document.getElementById("dinner-button").addEventListener("click", () => {
+  getMeal("dinner");
 });
 
+async function getMeal(type) {
+  try {
+    const response = await fetch(
+      `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&tags=${type}`
+    );
+
+    const data = await response.json();
+    console.log(data);
+
+    if (data.recipes && data.recipes.length > 0) {
+      showPopup(`${type.toUpperCase()}: ${data.recipes[0].title}`);
+    } else {
+      showPopup("No recipe found for this meal type");
+    }
+
+  } catch (error) {
+    console.error(error);
+    showPopup("Error loading recipe");
+  }
+}
+
+function showPopup(text) {
+  const popup = document.getElementById("popup");
+  popup.innerText = text;
+  popup.classList.add("show");
+
+  
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 3000);
+}
