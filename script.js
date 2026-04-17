@@ -2,7 +2,7 @@ let button = document.querySelector("#breakfast-button");
 let button2 = document.querySelector("#lunch-button");
 let button3 = document.querySelector("#dinner-button");
 
-const apiKey = "60500af04e534d729559eb02ffcad121";
+const apiKey = "267a0cac406b4cdb988994184d7b98bf";
 
 document.getElementById("breakfast-button").addEventListener("click", () => {
   getMeal("breakfast");
